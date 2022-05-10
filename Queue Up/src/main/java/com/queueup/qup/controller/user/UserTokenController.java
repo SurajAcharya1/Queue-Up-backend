@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/user-token")
+@RequestMapping("/user/token")
 public class UserTokenController{
     @GetMapping
     public String openUserTokenPage(){
-        return "userToken";
+        return "users/userToken";
     }
 }

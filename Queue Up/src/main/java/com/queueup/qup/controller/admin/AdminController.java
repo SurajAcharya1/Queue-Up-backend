@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/admin-panel")
+@RequestMapping("/admin/adminPanel")
 public class AdminController{
     @GetMapping
     public String openAdminPage(){
-        return "admin";
+        return "admin/adminPanel";
     }
 }

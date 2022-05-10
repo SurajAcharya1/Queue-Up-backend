@@ -5,10 +5,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/admin-key")
+@RequestMapping("/admin/key")
 public class AdminKeyController {
     @GetMapping
     public String openAdminKeyPage(){
-        return "key";
+        return "admin/key";
     }
 }

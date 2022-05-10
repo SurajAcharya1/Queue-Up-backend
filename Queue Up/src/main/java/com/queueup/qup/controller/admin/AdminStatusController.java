@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/admin-status")
+@RequestMapping("/admin/status")
 public class AdminStatusController {
     @GetMapping
     public String openAdminStatusPage(){
-        return "status";
+        return "admin/status";
     }
 }
 
