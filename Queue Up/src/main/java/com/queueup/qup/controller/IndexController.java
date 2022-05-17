@@ -17,6 +17,7 @@ public class IndexController {
     private final UserServiceImpl userService;
 
     public IndexController(UserServiceImpl userService) {
+
         this.userService = userService;
     }
 

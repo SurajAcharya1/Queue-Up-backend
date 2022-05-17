@@ -10,34 +10,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
-public class UserServiceImpl implements UserService/*, GenericCrudService<UserDto, Integer>*/ {
+public class UserServiceImpl implements UserService{
     private final UserRepo userRepo;
 
     public UserServiceImpl(UserRepo userRepo) {
+
         this.userRepo = userRepo;
     }
-/*
-
-    @Override
-    public UserDto create(UserDto userdto) {
-        User entity = User.builder()
-                .id(userdto.getId())
-                .userName(userdto.getUserName())
-                .name(userdto.getName())
-                .email(userdto.getEmail())
-                .password(userdto.getPassword())
-                .phoneNumber(userdto.getPhoneNumber())
-                .build();
-        entity=userRepo.save(entity);
-        return UserDto.builder().id(entity.getId())
-                .userName(entity.getUserName())
-                .name(entity.getName())
-                .email(entity.getEmail())
-                .password(entity.getPassword())
-                .phoneNumber(entity.getPhoneNumber())
-                .build();
-    }
-*/
 
     @Override
     public UserDto save(UserDto userDto) {
@@ -87,8 +66,4 @@ public class UserServiceImpl implements UserService/*, GenericCrudService<UserDt
 
     }
 
- /*   @Override
-    public void delete(Integer id) {
-
-    }*/
 }

@@ -1,8 +1,5 @@
 package com.queueup.qup.entity;
 
-/*
-import com.queueup.qup.enums.GenderStatus;
-*/
 import lombok.*;
 
 import javax.persistence.*;
@@ -21,8 +18,8 @@ import java.io.Serializable;
 @NoArgsConstructor
 public class User implements Serializable {
     @Id
-    @SequenceGenerator(name="user_id_sequence", sequenceName = "user_id_sequence")
-    @GeneratedValue(generator = "user_id_sequence", strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(name = "user_id_sequence", sequenceName = "user_id_sequence")
+    @GeneratedValue(generator = "user_id_sequence", strategy = GenerationType.AUTO)
     private Integer id;
 
     @Column(name = "name", length = 80)
@@ -42,6 +39,5 @@ public class User implements Serializable {
 
     @Column(name = "gender", length = 6)
     private String gender;
-   /* @Column(name = "gender", length = 20)
-    private GenderStatus gender;*/
+
 }

@@ -7,6 +7,8 @@
     <title>Generate Key</title>
     <link rel="stylesheet" th:href="@{~/key.css}">
     <link rel="stylesheet" th:href="@{~/admin.css}">
+    <link rel="stylesheet" th:href="@{~/signup.css}">
+
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </head>
 <body>
@@ -35,19 +37,24 @@
 
         <main>
             <h1>Generate Token Key</h1>
-            <div class="key">
-                <div class="date">
-                <h2>Choose Date</h2>
-                <input type="date" name="key-date" id="key-date"> <br>
-                <button>Enter</button>
-            </div>
-                <div class="token-key">
-                    <h2>Enter Key </h2>
-                    <div class="key-text">
-                    <input type="text" placeholder="Enter Key">
-                    </div>
-                <button>Generate Key</button>
-            </div>
+            <div class="form.container">
+                <div class="content">
+                    <form th:action="@{~/create}" th:method="post" th:object="${keyDto}">
+                        <div class="user-details">
+                            <div class="input-box">
+                                <span style="font-size:20px;" class="details">Key Name</span>
+                                <input style="width:100% ;" type="text" placeholder="Enter key name" required>
+                            </div>
+                            <div class="input-box">
+                                <span style="font-size:20px;" class="details">Key</span>
+                                <input  style="width:100% ;" type="text" placeholder="Enter Key" required>
+                            </div>
+                        </div>
+                        <div class="button">
+                            <input style="width: 40%;" type="submit" value="Generate Key">
+                        </div>
+                    </form>
+                </div>
             </div>
             <div class="key-grid">
                 <div class="users-status">
@@ -61,53 +68,15 @@
                                <thead>
                                    <tr>
                                        <td>S.N</td>
-                                       <td>Date</td>
+                                       <td>Key Name</td>
                                        <td>Generated Keys</td>
                                    </tr>
                                </thead>
                                <tbody>
-                                   <tr>
-                                       <td>1</td>
-                                       <td>2022 / 04 / 10</td>
-                                       <td>
-                                         TxUraZ World
-                                       </td>
-                                   </tr>
-                                   <tr>
-                                    <td>1</td>
-                                    <td>2022 / 04 / 10</td>
-                                    <td>
-                                      TxUraZ World
-                                    </td>
-                                   </tr>
-                                   <tr>
-                                    <td>1</td>
-                                    <td>2022 / 04 / 10</td>
-                                    <td>
-                                      TxUraZ World
-                                    </td>
-                                   </tr>
-                                   <tr>
-                                    <td>1</td>
-                                    <td>2022 / 04 / 10</td>
-                                    <td>
-                                      TxUraZ World
-                                    </td>
-                                   </tr>
-                                   <tr>
-                                    <td>1</td>
-                                    <td>2022 / 04 / 10</td>
-                                    <td>
-                                      TxUraZ World
-                                    </td>
-                                   </tr>
-                                   <tr>
-                                    <td>1</td>
-                                    <td>2022 / 04 / 10</td>
-                                    <td>
-                                      TxUraZ World
-                                    </td>
-                                   </tr>
+                               <tr th:each="key,loop : ${keyList}">
+                                   <td th:text="${loop.count}"></td>
+                                   <td th:text="${key.name}"></td>
+                                   <td th:text="${key.key}"></td>
                                </tbody>
                            </table>
                        </div>
